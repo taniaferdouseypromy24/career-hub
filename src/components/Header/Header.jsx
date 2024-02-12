@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const links = (
@@ -7,15 +7,9 @@ const Header = () => {
       <li className="hover:text-[#9873FF] font-semibold">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="hover:text-[#9873FF] font-semibold">
-        <NavLink to="/blogs">Blogs</NavLink>
-      </li>
-      <li className="hover:text-[#9873FF] font-semibold">
-        <NavLink to="/statistics">Statistics</NavLink>
-      </li>
-      <li className="hover:text-[#9873FF] font-semibold">
-        <NavLink to="/jobListing"> Listing</NavLink>
-      </li>
+      
+      
+     
       <li className="hover:text-[#9873FF] font-semibold">
         <NavLink to="/applied"> Applied</NavLink>
       </li>
@@ -54,9 +48,12 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className=" navbar-end">
+      <Link to="/featured">
+
         <a className="text-white hover:text-black btn bg-[#9873FF] ">
           Start Applying
         </a>
+        </Link>
       </div>
     </div>
   );

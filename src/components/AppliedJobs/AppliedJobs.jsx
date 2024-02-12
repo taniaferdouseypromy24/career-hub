@@ -58,7 +58,7 @@ const AppliedJobs = () => {
       <div className="lg:ps-[150px] lg:pe-[150px]">
         {/* filter button */}
         <div className="flex justify-end">
-          <div className="dropdown dropdown-top ">
+          <div className="dropdown lg:dropdown-top  ">
             <div tabIndex={0} role="button" className=" btn m-1">
               <div>Filter By</div>
               <img className="w-4 ms-1" src={arrowIcon} alt="" />
@@ -84,7 +84,7 @@ const AppliedJobs = () => {
             key={job.id}
             className=" my-2 mx-6 lg:mx-2 card card-compact rounded-sm  border border-gray-300 p-6"
           >
-            <div className="flex gap-3  ">
+            <div className="md:flex  gap-3  ">
               <div className="w-40 h-40 rounded-lg flex items-center justify-center bg-[#F4F4F4]">
                 <img className="w-24  " src={job.logo} alt="" />
               </div>
@@ -111,9 +111,9 @@ const AppliedJobs = () => {
                   </div>
                 </div>
               </div>
-              <div className="card-actions flex justify-end items-center ms-auto">
+              <div className=" md:flex justify-end items-center ms-auto">
                 <Link to={`/job/${job.id}`}>
-                  <button className="rounded-lg p-2  bg-[#7E90FE] text-white">
+                  <button className="w-full rounded-lg p-2  bg-[#7E90FE] text-white">
                     View Details
                   </button>
                 </Link>
@@ -122,40 +122,7 @@ const AppliedJobs = () => {
           </div>
         ))}
 
-        {/* <div className="my-2 mx-6 lg:mx-2 card card-compact rounded-sm  border border-gray-300 p-6">
-      <div className=" ms-5">
-        <img src={logo} />
-      </div>
-      <div className="card-body">
-        <h2 className="card-title font-bold">{job_title}</h2>
-        <h2 className="card-title  text-gray-500 ">{company_name}</h2>
-        <div className="flex flex-wrap gap-2 ">
-          <button className="rounded-sm px-5  py-2 outline outline-1  outline-[#7E90FE] text-[#7E90FE]">
-            Remote
-          </button>
-          <button className="rounded-sm px-5 py-2 outline outline-1 outline-[#7E90FE] text-[#7E90FE]">
-            Onsite
-          </button>
-        </div>
-        <div className="flex flex-wrap justify-start gap-2 lg:gap-5 my-2">
-          <div className="flex items-center gap-2">
-            <img className="w-5" src={locationIcon} alt="" />
-            <p>{location}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <img className="w-5 " src={moneyIcon} alt="" />
-            <p>Salary : {salary}</p>
-          </div>
-        </div>
-        <div className="card-actions flex justify-end">
-          <Link to={`/job/${id}`}>
-            <button className="rounded-lg p-2  bg-[#7E90FE] text-white">
-              View Details
-            </button>
-          </Link>
-        </div>
-      </div>
-    </div> */}
+        
       </div>
     </div>
   );

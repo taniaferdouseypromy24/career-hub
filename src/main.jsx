@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import JobDetails from './components/JobDetails/JobDetails';
+import FeaturedJobs from "./components/FeaturedJobs/FeaturedJobs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/featured",
+        element: <FeaturedJobs />,
       },
       {
         path: "/applied",
