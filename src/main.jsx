@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root/Root.jsx";
 import Home from "./components/Home/Home.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import JobDetails from './components/JobDetails/JobDetails';
@@ -13,25 +11,25 @@ import FeaturedJobs from "./components/FeaturedJobs/FeaturedJobs.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "/featured",
+        path: '/featured',
         element: <FeaturedJobs />,
       },
       {
-        path: "/applied",
+        path: '/applied',
         element: <AppliedJobs />,
         loader: ()=> fetch('../public/jobs.json')
       },
       {
-        path: "/job/:id",
+        path: '/job/:id',
         element: <JobDetails />,
         loader: ()=> fetch('../public/jobs.json')
       },
