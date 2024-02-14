@@ -100,12 +100,21 @@ const AppliedJobs = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-2 ">
-                  <button className="rounded-sm px-3  py-1 outline outline-1  outline-[#7E90FE] text-[#7E90FE]">
+                  {
+                    job.remote_or_onsite === 'Remote'?  <button className="rounded-sm px-3  py-1 outline outline-1  bg-[#7E90FE] text-white">
                     Remote
-                  </button>
-                  <button className="rounded-sm px-3 py-1 outline outline-1 outline-[#7E90FE] text-[#7E90FE]">
+                  </button>:<button className="rounded-sm px-3  py-1 outline outline-1  outline-[#7E90FE] text-[#7E90FE]">
+                  Remote
+                </button>
+                  }
+                  {
+                    job.remote_or_onsite === 'Onsite'?  <button className="rounded-sm px-3 py-1 outline outline-1 bg-[#7E90FE] text-white">
+                    Onsite
+                  </button>:<button className="rounded-sm px-3 py-1 outline outline-1 outline-[#7E90FE] text-[#7E90FE]">
                     Onsite
                   </button>
+                  }
+                  
                 </div>
                 <div className="flex flex-wrap justify-start gap-2 lg:gap-5 my-2">
                   <div className="flex items-center gap-2">
