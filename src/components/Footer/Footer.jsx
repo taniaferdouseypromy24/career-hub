@@ -5,7 +5,7 @@ import twitterIcon from "../../assets/socialIcons/twitter.png";
 
 const Footer = () => {
   return (
-    <div className="px-5 lg:ps-[200px] lg:pe-[200px] bg-black text-white ">
+    <div className="mt-24 px-5 lg:ps-[200px] lg:pe-[200px] bg-black text-white ">
       <footer className=" footer pt-10 pb-10 ">
         <aside>
           <p className="text-2xl font-bold ">CareerHub</p>

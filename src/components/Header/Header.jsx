@@ -50,7 +50,6 @@ const Header = () => {
           to="/featured"
           className="text-white hover:text-black btn bg-[#9873FF] "
         >
-          {" "}
           Start Applying
         </Link>
       </div>

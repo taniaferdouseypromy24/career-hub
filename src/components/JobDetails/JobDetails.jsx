@@ -10,7 +10,10 @@ import emailIcon from "../../assets/icons/email.png";
 import addressIcon from "../../assets/icons/location2.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getStoredApplication, setJobApplication } from "../../utility/localStorage";
+import {
+  getStoredApplication,
+  setJobApplication,
+} from "../../utility/localStorage";
 
 const JobDetails = () => {
   const allJobs = useLoaderData();
@@ -24,10 +27,10 @@ const JobDetails = () => {
 
   const handleApplyJob = () => {
     const alreadyApplied = getStoredApplication();
-    const alreadyExists = alreadyApplied.find(jobId => jobId === idInt)
-    console.log('it',alreadyExists)
-    if(alreadyExists){
-      toast.warn('You already applied to this job!', {
+    const alreadyExists = alreadyApplied.find((jobId) => jobId === idInt);
+    // console.log("it", alreadyExists);
+    if (alreadyExists) {
+      toast.warn("You already applied to this job!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -36,10 +39,9 @@ const JobDetails = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
-    }
-    else{
-      setJobApplication(idInt)
+      });
+    } else {
+      setJobApplication(idInt);
 
       toast.success("You Applied Successfully!", {
         position: "top-center",
@@ -52,7 +54,6 @@ const JobDetails = () => {
         theme: "light",
       });
     }
-
   };
   return (
     <div>
@@ -72,31 +73,26 @@ const JobDetails = () => {
       <div className="mt-8 grid  gap-12 lg:grid-cols-5 lg:ps-[150px] lg:pe-[150px] px-[30px] ">
         <div className="mt-4 col-span-3  ">
           <p className="text-gray-500 text-justify">
-            {" "}
-            <span className="font-semibold text-black ">
-              Job Description:
-            </span>{" "}
-            {job.job_description}{" "}
+            <span className="font-semibold text-black ">Job Description:</span>
+            {job.job_description}
           </p>
           <p className="text-gray-500 text-justify mt-8">
-            {" "}
             <span className="font-semibold text-black ">
               Job Responsibility:
-            </span>{" "}
-            {job.job_responsibility}{" "}
+            </span>
+            {job.job_responsibility}
           </p>
           <p className="font-semibold text-black mt-8">
             Educational Requirements:
-          </p>{" "}
+          </p>
           <p className="text-gray-500 text-justify mt-4">
-            {" "}
-            {job.educational_requirements}{" "}
-          </p>{" "}
-          <p className="font-semibold text-black mt-8 ">Experiences</p>{" "}
+            {job.educational_requirements}
+          </p>
+          <p className="font-semibold text-black mt-8 ">Experiences</p>
           <p className="text-gray-500 text-justify my-4">{job.experiences} </p>
         </div>
 
-        <div className=" mb-24 col-span-3  lg:col-span-2  ">
+        <div className=" mb-24 col-span-3  lg:col-span-2 mt-5  ">
           <div className="bg-[#dcd2eb] h-full rounded-lg p-5 w-full flex flex-col justify-evenly">
             <p className=" font-semibold">Job Details</p>
             <div className="border border-1 border-[#b7bff3]"></div>
@@ -140,7 +136,7 @@ const JobDetails = () => {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-           theme="light"
+          theme="light"
         />
       </div>
     </div>

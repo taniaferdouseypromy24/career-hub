@@ -10,7 +10,7 @@ import { getStoredApplication } from "../../utility/localStorage";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
-  // console.log("jobs",jobs);
+  console.log("jobs",jobs);
   const [appliedJobs, setAppliedJobs] = useState([]);
   // console.log("appliedJobs",appliedJobs);
 
@@ -19,30 +19,28 @@ const AppliedJobs = () => {
 
   useEffect(() => {
     const appliedJObIds = getStoredApplication();
-    if (jobs.length > 0) {
-      const jobsApplied = jobs.filter(job => appliedJObIds.includes(job.id));
+    if ( jobs.length > 0) {
+      const jobsApplied = jobs.filter((job) => {
+        return appliedJObIds.includes(job.id);
+      });
       // console.log(jobsApplied,appliedJObIds)
       setAppliedJobs(jobsApplied);
       setDisplayJobs(jobsApplied);
     }
   }, [jobs]);
-  const handleAppliedJobsFilter = filterValue => {
+  const handleAppliedJobsFilter = (filterValue) => {
     if (filterValue === "all") {
       setDisplayJobs(appliedJobs);
     } else if (filterValue === "remote") {
-      
-        const remoteJobs = appliedJobs.filter(
-          job => job.remote_or_onsite === "Remote"
-        );
-        setDisplayJobs(remoteJobs);
-      
+      const remoteJobs = appliedJobs.filter((job) => {
+        return job.remote_or_onsite === "Remote";
+      });
+      setDisplayJobs(remoteJobs);
     } else if (filterValue === "onsite") {
-      
-        const onsiteJobs = appliedJobs.filter(
-          job => job.remote_or_onsite === "Onsite"
-        );
-        setDisplayJobs(onsiteJobs);
-      
+      const onsiteJobs = appliedJobs.filter((job) => {
+        return job.remote_or_onsite === "Onsite";
+      });
+      setDisplayJobs(onsiteJobs);
     }
   };
   return (
@@ -83,7 +81,6 @@ const AppliedJobs = () => {
               <li onClick={() => handleAppliedJobsFilter("onsite")}>
                 <a>Onsite</a>
               </li>
-              
             </ul>
           </div>
         </div>
