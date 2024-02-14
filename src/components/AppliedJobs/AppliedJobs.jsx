@@ -21,18 +21,18 @@ const AppliedJobs = () => {
             setDisplayJobs(jobsApplied)
         }
     }, [jobs]);
-    const handleAppliedJobsFilter = filter =>{
-        if(filter === "all"){
+    const handleAppliedJobsFilter = filterValue=>{
+        if(filterValue === "all"){
             setDisplayJobs(appliedJobs)
         }
-        else if (filter === "remote"){
-            if(filter === "remote"){
+        else if (filterValue === "remote"){
+            if(filterValue === "remote"){
                 const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote')
                 setDisplayJobs(remoteJobs)
             }
         }
-        else if (filter === "onsite"){
-            if(filter === "onsite"){
+        else if (filterValue === "onsite"){
+            if(filterValue === "onsite"){
                 const onsiteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Onsite')
                 setDisplayJobs(onsiteJobs)
             }
