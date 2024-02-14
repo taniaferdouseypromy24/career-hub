@@ -46,10 +46,12 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className=" navbar-end">
-        <Link to="/featured">
+        <Link
+          to="/featured"
+          className="text-white hover:text-black btn bg-[#9873FF] "
+        >
           {" "}
-          className="text-white hover:text-black btn bg-[#9873FF] "> Start
-          Applying
+          Start Applying
         </Link>
       </div>
     </div>
