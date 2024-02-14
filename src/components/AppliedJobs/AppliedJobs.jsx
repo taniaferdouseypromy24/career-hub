@@ -10,18 +10,18 @@ import { getStoredApplication } from "../../utility/localStorage";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
-  console.log("jobs",jobs);
+  // console.log("jobs",jobs);
   const [appliedJobs, setAppliedJobs] = useState([]);
-  console.log("appliedJobs",appliedJobs);
+  // console.log("appliedJobs",appliedJobs);
 
   const [displayJobs, setDisplayJobs] = useState([]);
-  console.log("displayJObs",displayJobs);
+  // console.log("displayJObs",displayJobs);
 
   useEffect(() => {
     const appliedJObIds = getStoredApplication();
     if (jobs.length > 0) {
       const jobsApplied = jobs.filter(job => appliedJObIds.includes(job.id));
-      console.log(jobsApplied,appliedJObIds)
+      // console.log(jobsApplied,appliedJObIds)
       setAppliedJobs(jobsApplied);
       setDisplayJobs(jobsApplied);
     }
@@ -30,19 +30,19 @@ const AppliedJobs = () => {
     if (filterValue === "all") {
       setDisplayJobs(appliedJobs);
     } else if (filterValue === "remote") {
-      {
+      
         const remoteJobs = appliedJobs.filter(
           job => job.remote_or_onsite === "Remote"
         );
         setDisplayJobs(remoteJobs);
-      }
+      
     } else if (filterValue === "onsite") {
-      {
+      
         const onsiteJobs = appliedJobs.filter(
           job => job.remote_or_onsite === "Onsite"
         );
         setDisplayJobs(onsiteJobs);
-      }
+      
     }
   };
   return (
