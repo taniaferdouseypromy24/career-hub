@@ -17,7 +17,7 @@ const CategoryList = () => {
 
       <div className="flex flex-wrap gap-3.5 justify-center ">
         {categories.map((category) => (
-          <div className="bg-blue-100 rounded p-8 w-64 cursor-pointer" key={category}>
+          <div className="bg-blue-100 rounded p-8 w-64 cursor-pointer" key={category.id}>
             {" "}
             <div className="bg-blue-200 p-4 mb-6 rounded-md flex justify-center w-1/3 ">
             <img src={category.logo} alt="" />
