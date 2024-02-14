@@ -1,4 +1,3 @@
-import { getItem } from "localforage"
 
 const getStoredApplication = () =>{
     const storedJobApplied = localStorage.getItem('job-application')
