@@ -16,7 +16,7 @@ const AppliedJobs = () => {
         const appliedJObIds = getStoredApplication();
         if(jobs.length > 0){
             const jobsApplied = jobs.filter(job=> appliedJObIds.includes(job.id))
-            console.log(jobs,appliedJObIds)
+            // console.log(jobs,appliedJObIds)
             setAppliedJobs(jobsApplied)
             setDisplayJobs(jobsApplied)
         }
