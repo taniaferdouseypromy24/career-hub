@@ -10,34 +10,41 @@ import { getStoredApplication } from "../../utility/localStorage";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
+  //console.log(jobs.length);
   const [appliedJobs, setAppliedJobs] = useState([]);
+  //console.log(appliedJobs);
+
   const [displayJobs, setDisplayJobs] = useState([]);
-    useEffect(() => {
-        const appliedJObIds = getStoredApplication();
-        if(jobs.length > 0){
-            const jobsApplied = jobs.filter(job=> appliedJObIds.includes(job.id))
-            // console.log(jobs,appliedJObIds)
-            setAppliedJobs(jobsApplied)
-            setDisplayJobs(jobsApplied)
-        }
-    }, [jobs]);
-    const handleAppliedJobsFilter = filterValue=>{
-        if(filterValue === "all"){
-            setDisplayJobs(appliedJobs)
-        }
-        else if (filterValue === "remote"){
-            if(filterValue === "remote"){
-                const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote')
-                setDisplayJobs(remoteJobs)
-            }
-        }
-        else if (filterValue === "onsite"){
-            if(filterValue === "onsite"){
-                const onsiteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Onsite')
-                setDisplayJobs(onsiteJobs)
-            }
-        }
+  console.log(displayJobs);
+
+  useEffect(() => {
+    const appliedJObIds = getStoredApplication();
+    if (jobs.length > 0) {
+      const jobsApplied = jobs.filter((job) => appliedJObIds.includes(job.id));
+      // console.log(jobs,appliedJObIds)
+      setAppliedJobs(jobsApplied);
+      setDisplayJobs(jobsApplied);
     }
+  }, [jobs]);
+  const handleAppliedJobsFilter = (filterValue) => {
+    if (filterValue === "all") {
+      setDisplayJobs(appliedJobs);
+    } else if (filterValue === "remote") {
+      {
+        const remoteJobs = appliedJobs.filter(
+          (job) => job.remote_or_onsite === "Remote"
+        );
+        setDisplayJobs(remoteJobs);
+      }
+    } else if (filterValue === "onsite") {
+      {
+        const onsiteJobs = appliedJobs.filter(
+          (job) => job.remote_or_onsite === "Onsite"
+        );
+        setDisplayJobs(onsiteJobs);
+      }
+    }
+  };
   return (
     <div>
       {/* banner */}
@@ -90,7 +97,9 @@ const AppliedJobs = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-xl font-semibold">{job.job_title}</p>
-                <p className="text-gray-500 font-semibold">{job.company_name}</p>
+                <p className="text-gray-500 font-semibold">
+                  {job.company_name}
+                </p>
 
                 <div className="flex flex-wrap gap-2 ">
                   <button className="rounded-sm px-3  py-1 outline outline-1  outline-[#7E90FE] text-[#7E90FE]">
@@ -121,8 +130,6 @@ const AppliedJobs = () => {
             </div>
           </div>
         ))}
-
-        
       </div>
     </div>
   );
